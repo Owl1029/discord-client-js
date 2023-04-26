@@ -40,21 +40,12 @@ export class Client {
             const jsonData = JSON.parse(data.toString());
     
             if (jsonData.op === 10) {
-              const interval = jsonData.d.heartbeat_interval / 1000;
-
               this.heartbeatIntervalId = setInterval(() => {
                 ws.send(JSON.stringify({
                   op: 1,
                   d: Date.now()
                 }));
-              }, interval);
-            }
-        });
-
-        ws.on('close', (code) => {
-            if (this.heartbeatIntervalId) {
-                clearInterval(this.heartbeatIntervalId);
-                this.heartbeatIntervalId = null;
+              }, 5000);
             }
         });
 
