@@ -30,3 +30,9 @@
         - [Events](/events)
             * [Ready](/events#ready)
             * [Receving messages](/events#receving-messages)
+
+- [EmbedBuilder](/embedbuilder)
+    * [What is EmbedBuilder?](/embedbuilder#what-is-embedbuilder)
+    * [How to use a embed builder?](/embedbuilder#how-to-use-a-embed-builder)
+    * [How to send a embed?](/embedbuilder#sending-a-embed)
+    * [Problems](/embedbuilder.md#problems)

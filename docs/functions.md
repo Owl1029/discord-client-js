@@ -9,6 +9,18 @@ const sendMessage = await client.channels.sendMessage(channelID, message);
 
 // If you need details about the message being send
 console.log(sendMessage)
+
+// Sending embed
+
+const embed = new EmbedBuilder()
+    .setURL("https://example.com")
+    .setTitle("Hello World")
+    .setImage("https://example.com/image.png")
+    .setDescription("I don't know")
+    .setColor("00ff40") // Colors are hexadecimal
+
+const sendMessage = await client.channels.sendMessage(channelID, { content: message, embed: embed });
+
 ```
 
 ### Reading messages
