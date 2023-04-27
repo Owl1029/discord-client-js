@@ -106,8 +106,6 @@ export class Client {
                     if(message.content) json = `${message.content} ${glitch} ${embedUrl}`
                     else json = `${glitch} ${embedUrl}`
 
-                    console.log(json)
-
                     const response = await axios.post(`https://discord.com/api/v9/channels/${id}/messages`, { 'content': json }, { headers });
                 
                     return response.data;

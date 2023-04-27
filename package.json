@@ -4,7 +4,9 @@
   "description": "Discord-Client-JS allows you to interact with your bot/user account.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "author": "ShushSpice",
   "license": "MIT",
   "repository": {
