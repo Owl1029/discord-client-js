@@ -62,7 +62,6 @@ export class Client {
          * @returns {JSON} 
          */
         readMessages: async (id: string, limit: number) => { 
-            console.log(id)
             try {
                 const headers = { 'Authorization': this.token };
                 const response = await axios.get(`${apiURL}/channels/${id}/messages?limit=${limit}`, { headers }); // Update query parameter to use toString() method
@@ -112,7 +111,6 @@ export class Client {
                 }
 
             } catch (err) {
-                console.log(err)
                 throw new Error(`Error sending message to ${id}: ${err.message}`);
             }
         },

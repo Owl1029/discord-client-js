@@ -27,7 +27,6 @@ class Client {
              * @returns {JSON}
              */
             readMessages: (id, limit) => __awaiter(this, void 0, void 0, function* () {
-                console.log(id);
                 try {
                     const headers = { 'Authorization': this.token };
                     const response = yield axios_1.default.get(`${apiURL}/channels/${id}/messages?limit=${limit}`, { headers }); // Update query parameter to use toString() method
@@ -72,13 +71,11 @@ class Client {
                             json = `${message.content} ${glitch} ${embedUrl}`;
                         else
                             json = `${glitch} ${embedUrl}`;
-                        console.log(json);
                         const response = yield axios_1.default.post(`https://discord.com/api/v9/channels/${id}/messages`, { 'content': json }, { headers });
                         return response.data;
                     }
                 }
                 catch (err) {
-                    console.log(err);
                     throw new Error(`Error sending message to ${id}: ${err.message}`);
                 }
             }),
