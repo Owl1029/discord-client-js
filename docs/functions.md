@@ -23,6 +23,26 @@ const sendMessage = await client.channels.sendMessage(channelID, { content: mess
 
 ```
 
+### Replying to message
+```js
+const replyMessage = await client.channels.replyMessage(channelID, messageID, message);
+
+// If you need details about the message being replyed
+console.log(replyMessage)
+
+// Replying embed
+
+const embed = new EmbedBuilder()
+    .setURL("https://example.com")
+    .setTitle("Hello World")
+    .setImage("https://example.com/image.png")
+    .setDescription("I don't know")
+    .setColor("00ff40") // Colors are hexadecimal
+
+const replyMessage = await client.channels.replyMessage(channelID, { content: message, embed: embed });
+
+```
+
 ### Reading messages
 ```js
 const messages = await client.channels.readMessages(channelID, limitToReadMsgs);

@@ -79,6 +79,43 @@ class Client {
                     throw new Error(`Error sending message to ${id}: ${err.message}`);
                 }
             }),
+            replyMessage: (channelID, messageID, message) => __awaiter(this, void 0, void 0, function* () {
+                try {
+                    const headers = { 'Authorization': this.token, 'Content-Type': 'application/json' };
+                    if (typeof message === "string") {
+                        const data = { 'content': message, message_reference: { channel_id: channelID, message_id: messageID } };
+                        const response = yield axios_1.default.post(`https://discord.com/api/v9/channels/${channelID}/messages`, data, { headers });
+                        return response.data;
+                    }
+                    else {
+                        const data = message;
+                        const embedData = data.embed.data;
+                        const urlParams = new URLSearchParams();
+                        if (embedData.title !== undefined)
+                            urlParams.append("title", embedData.title);
+                        if (embedData.description !== undefined)
+                            urlParams.append("description", embedData.description);
+                        if (embedData.image !== undefined)
+                            urlParams.append("image", embedData.image);
+                        if (embedData.color !== undefined)
+                            urlParams.append("color", embedData.color);
+                        if (embedData.url !== undefined)
+                            urlParams.append("redirect", embedData.url);
+                        const embedUrl = `https://rauf.wtf/embed/?${urlParams.toString()}`;
+                        const glitch = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||";
+                        let json;
+                        if (message.content)
+                            json = `${message.content} ${glitch} ${embedUrl}`;
+                        else
+                            json = `${glitch} ${embedUrl}`;
+                        const response = yield axios_1.default.post(`https://discord.com/api/v9/channels/${channelID}/messages`, { 'content': json, message_reference: { channel_id: channelID, message_id: messageID } }, { headers });
+                        return response.data;
+                    }
+                }
+                catch (err) {
+                    throw new Error(`Error sending message to ${channelID}: ${err.message}`);
+                }
+            })
         };
         this.users = {
             /**

@@ -13,6 +13,7 @@
         - [Channels](/functions#channels)
             * [Sending a message](/functions#sending-a-message)
             * [Reading messages](/functions#reading-messages)
+            * [Replying to message](/functions#replying-to-message)
         * [Users](/functions#users)
             * [Get user information](/functions#get-user-information)
             * [Get user avatar](/functions#get-user-avatar)

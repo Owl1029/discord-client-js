@@ -18,6 +18,7 @@ export declare class Client {
          * @returns {JSON}
          */
         sendMessage: (id: string, message: any) => Promise<any>;
+        replyMessage: (channelID: string, messageID: string, message: any) => Promise<any>;
     };
     users: {
         /**
