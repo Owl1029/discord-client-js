@@ -1,7 +1,18 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Discord](https://img.shields.io/discord/1043936305127632927?color=%23697EC6&label=discord)](https://discord.gg/svqDa5TaxA)
+
+## Notice: Project Discontinuation
+
+🚨 **Important Notice: Project Discontinued**
+
+Dear users,
+
+I regret to inform you that I am no longer actively working on this project, and I will not be providing any further updates or support.
+
+Feel free to fork the project and continue its development if you find it valuable. However, please note that I won't be available to address issues, review pull requests, or provide support.
+
+Thank you to everyone who has contributed, used, or shown interest in the project. I appreciate your support.
 
 ## Contents
 
@@ -13,7 +24,7 @@
 - [Support](#support)
 
 ## Introduction
-Welcome to DiscordClientJS! This Node.js package allows you to interact with your bot/user account on Discord. With DiscordClientJS, you can send and read messages, among other functionalities. However, please note that using your user account with this package is against Discord's Terms of Service, so be sure to use it responsibly. If you encounter any issues during installation or usage, feel free to join the [Discord support server](https://discord.gg/svqDa5TaxA) for assistance.
+Welcome to DiscordClientJS! This Node.js package allows you to interact with your bot/user account on Discord. With DiscordClientJS, you can send and read messages, among other functionalities. However, please note that using your user account with this package is against Discord's Terms of Service, so be sure to use it responsibly.
 
 ## Risks
 > **Warning**:
@@ -26,8 +37,6 @@ Welcome to DiscordClientJS! This Node.js package allows you to interact with you
 ```
 npm install discord-client-js
 ```
-
-If you are having some trouble setting up the package, Feel free to join my [Discord Server](https://discord.gg/fmDQYhhQdC).
 
 ## Usage
 
@@ -54,5 +63,4 @@ client.on('message', async (message) => {
 There are more functions and events. Check them out at our [Documentation](https://owl1029.github.io/discord-client-js/).
 
 ## Support
-* [Discord](https://discord.gg/svqDa5TaxA)
 * [Documentation](https://owl1029.github.io/discord-client-js/)
